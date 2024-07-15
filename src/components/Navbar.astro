@@ -14,8 +14,12 @@ const { url } = Astro;
         <li>
           <a
             href={path}
-            class="transition-colors duration-200 p-1 hover:text-black"
-            class:list={[url.pathname == path ? "text-black" : "text-gray-500"]}
+            class="transition-colors duration-200 p-1 hover:text-black dark:hover:text-white"
+            class:list={[
+              url.pathname == path
+                ? "text-black dark:text-white"
+                : "text-gray-500 dark:text-slate-400",
+            ]}
           >
             {label}
           </a>

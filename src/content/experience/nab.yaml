@@ -1,8 +1,10 @@
 sortOrder: 1
 company: National Australia Bank
+companyUrl: "https://www.nab.com.au"
 logo: "./img/nab.png"
 positions:
   - title: Software Engineer
+    fromDate: 2023-07-01
     content:
       - Delivered an innovative feature to allow users to rearrange their accounts for a more personal touch, tremendously improving their account management experience.
       - Participated in the mobile app release and monitoring process, as well as providing production support.
@@ -10,6 +12,8 @@ positions:
       - Pioneered the transition of the iOS codebase to leverage modern Swift language features, such as Swift Concurrency to ensure an up-to-date, efficient and safe codebase.
       - Worked on microservices, developing APIs to enable ingesting data from third-party services, offering users a more relevant and personalized push notifications and email experience.
   - title: Associate Software Engineer
+    fromDate: 2022-02-01
+    toDate: 2023-07-01
     content:
       - Worked on an agile team to maintain and improve multiple features of the flagship NAB mobile banking application, one of the top 4 banks in Australia.
       - Delivered an improved Transactions experience, allowing user to gain more insights on their purchases, significantly improving customer experience.

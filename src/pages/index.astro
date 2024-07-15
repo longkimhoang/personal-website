@@ -4,10 +4,18 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
 const experiences = await getCollection("experience");
+
+const formatExperienceDate = (date: Date) => {
+  const format = new Intl.DateTimeFormat(undefined, {
+    year: "numeric",
+    month: "short",
+  });
+  return format.format(date);
+};
 ---
 
 <Layout title="Long Kim Hoang">
-  <main class="container mx-auto max-w-3xl">
+  <main class="container mx-auto max-w-3xl mb-8">
     <section id="about" class="mb-8">
       <h1 class="text-4xl font-semibold">Long Kim Hoang</h1>
       <h2 class="text-xl">iOS Engineer</h2>
@@ -28,7 +36,7 @@ const experiences = await getCollection("experience");
             .toSorted((a, b) => a.data.sortOrder - b.data.sortOrder)
             .map(({ data }) => (
               <li class="my-6">
-                <div class="flex item items-center gap-4 mb-1">
+                <h2 class="flex item items-center gap-4 mb-2">
                   <Image
                     width={48}
                     height={48}
@@ -36,14 +44,29 @@ const experiences = await getCollection("experience");
                     src={data.logo}
                     alt={`Logo of ${data.company}`}
                     loading="eager"
-                    class="w-12 h-12 object-contain"
+                    class="w-12 h-12 p-1 dark:bg-white object-contain"
                   />
-                  <h2 class="text-xl font-semibold">{data.company}</h2>
-                </div>
+                  <a
+                    href={data.companyUrl}
+                    class="text-xl font-semibold hover:underline"
+                  >
+                    {data.company}
+                  </a>
+                </h2>
                 {data.positions.map((position) => (
                   <ul class="list-disc list-inside mb-4 last:mb-0">
                     <li class="list-none">
-                      <h3 class="text-lg font-medium">{position.title}</h3>
+                      <div class="mb-1">
+                        <h3 class="text-lg font-medium">
+                          {position.title}
+                        </h3>
+                        <p class="text-sm font-medium text-gray-500 dark:text-slate-400">
+                          {formatExperienceDate(position.fromDate)} -{" "}
+                          {position.toDate
+                            ? formatExperienceDate(position.toDate)
+                            : "Present"}
+                        </p>
+                      </div>
                     </li>
                     {position.content.map((content) => (
                       <li>{content}</li>

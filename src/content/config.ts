@@ -6,10 +6,13 @@ const experienceCollection = defineCollection({
     z.object({
       sortOrder: z.number(),
       company: z.string(),
+      companyUrl: z.string().url(),
       logo: image(),
       positions: z.array(
         z.object({
           title: z.string(),
+          fromDate: z.date(),
+          toDate: z.date().optional(),
           content: z.array(z.string()),
         })
       ),

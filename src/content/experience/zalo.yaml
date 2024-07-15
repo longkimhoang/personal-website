@@ -1,13 +1,18 @@
 sortOrder: 2
 company: Zalo (VNG Corporation)
+companyUrl: "https://vng.com.vn/"
 logo: "./img/zalo.svg"
 positions:
   - title: Associate Software Engineer
+    fromDate: 2021-03-01
+    toDate: 2022-02-01
     content:
       - Worked on an in-house cross-platform UI framework using C++ with an Objective-C API, which is in use to serve millions of messages for Zalo users.
       - Developed an in-house JavaScript engine for UI interactivity and host app integration, powered by QuickJS.
       - Streamlined the framework delivery process for internal teams, using CI/CD to automate testing, building and distribution.
   - title: Software Engineering Intern
+    fromDate: 2020-03-01
+    toDate: 2021-03-01
     content:
       - Get hands-on experience with iOS development and software release process.
       - Helped with the Swift migration effort for Zavi (now part of Zalo) - a video conferencing application, helping thousands of users connect with each other during the pandemic.
