@@ -1,0 +1,26 @@
+---
+const links = [
+  { label: "Home", path: "/" },
+  { label: "Contact", path: "/contact" },
+] as const;
+
+const { url } = Astro;
+---
+
+<nav class="container mx-auto flex justify-end items-center py-4">
+  <ul class="flex gap-4 text-lg font-medium">
+    {
+      links.map(({ label, path }) => (
+        <li>
+          <a
+            href={path}
+            class="transition-colors duration-200 p-1 hover:text-black"
+            class:list={[url.pathname == path ? "text-black" : "text-gray-500"]}
+          >
+            {label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

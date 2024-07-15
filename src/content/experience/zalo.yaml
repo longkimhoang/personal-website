@@ -1,0 +1,13 @@
+sortOrder: 2
+company: Zalo (VNG Corporation)
+logo: "./img/zalo.svg"
+positions:
+  - title: Associate Software Engineer
+    content:
+      - Worked on an in-house cross-platform UI framework using C++ with an Objective-C API, which is in use to serve millions of messages for Zalo users.
+      - Developed an in-house JavaScript engine for UI interactivity and host app integration, powered by QuickJS.
+      - Streamlined the framework delivery process for internal teams, using CI/CD to automate testing, building and distribution.
+  - title: Software Engineering Intern
+    content:
+      - Get hands-on experience with iOS development and software release process.
+      - Helped with the Swift migration effort for Zavi (now part of Zalo) - a video conferencing application, helping thousands of users connect with each other during the pandemic.
