@@ -1,7 +1,7 @@
 ---
 const links = [
   { label: "Home", path: "/" },
-  { label: "Contact", path: "/contact" },
+  { label: "Contact", path: "/contact/" },
 ] as const;
 
 const { url } = Astro;
@@ -9,25 +9,27 @@ const { url } = Astro;
 
 <nav
   id="navbar"
-  class="container mx-auto flex justify-end items-center py-4 sticky top-0 bg-white dark:bg-slate-900"
+  class="container mx-auto sticky top-0 bg-white dark:bg-slate-900 py-4 px-4 lg:px-0"
 >
-  <ul class="flex gap-4 text-lg font-medium">
-    {
-      links.map(({ label, path }) => (
-        <li>
-          <a
-            href={path}
-            class="transition-colors duration-200 p-1 hover:text-black dark:hover:text-white"
-            class:list={[
-              url.pathname == path
-                ? "text-black dark:text-white"
-                : "text-gray-500 dark:text-slate-400",
-            ]}
-          >
-            {label}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <div class="flex justify-end items-center">
+    <ul class="flex gap-4 text-lg font-medium">
+      {
+        links.map(({ label, path }) => (
+          <li>
+            <a
+              href={path}
+              class="transition-colors duration-200 p-1 hover:text-black dark:hover:text-white"
+              class:list={[
+                url.pathname == path
+                  ? "text-black dark:text-white"
+                  : "text-gray-500 dark:text-slate-400",
+              ]}
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </nav>
