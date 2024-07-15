@@ -52,9 +52,12 @@ export default function ThemeToggleButton() {
     localStorage.setItem("theme", theme.value);
   };
 
+  const label = `Switch between light and dark theme. Current theme is ${theme.value}.`;
+
   return (
     <button
-      class="w-12 h-12 flex justify-center items-center"
+      class="flex justify-center items-center w-12"
+      aria-label={label}
       onClick={() => toggleTheme()}
     >
       {theme.value === "light" ? darkThemeIcon : lightThemeIcon}
