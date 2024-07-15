@@ -1,12 +1,16 @@
 ---
 import SpeedInsights from "@vercel/speed-insights/astro";
+import { SEO } from "astro-seo";
+import { getImage } from "astro:assets";
 import Navbar from "../components/Navbar.astro";
+import profileImage from "../images/profile.jpeg";
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const opengraphImage = await getImage({ src: profileImage, format: "webp" });
 ---
 
 <!doctype html>
@@ -18,6 +22,15 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <SEO
+      openGraph={{
+        basic: {
+          title,
+          type: "website",
+          image: opengraphImage.src,
+        },
+      }}
+    />
   </head>
   <body class="bg-white dark:bg-slate-900 text-black dark:text-white">
     <Navbar />
