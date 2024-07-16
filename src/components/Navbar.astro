@@ -1,5 +1,5 @@
 ---
-import ThemeToggleButton from "./ThemeToggleButton";
+import ThemeToggleButton from "./ThemeToggleButton.astro";
 
 const links = [
   { label: "Home", path: "/" },
@@ -14,7 +14,7 @@ const { url } = Astro;
   class="sticky top-0 bg-white dark:bg-slate-900 py-4 px-4 lg:px-0"
 >
   <div class="container mx-auto flex justify-end items-stretch">
-    <ThemeToggleButton client:only="preact" />
+    <ThemeToggleButton />
     <ul class="flex gap-4 text-lg font-medium ml-4">
       {
         links.map(({ label, path }) => (
