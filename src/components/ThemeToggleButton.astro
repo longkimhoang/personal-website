@@ -48,6 +48,9 @@
     return "light";
   })();
 
+  document.getElementById("theme-toggle").ariaLabel =
+    `Switch between light and dark theme. Current theme is ${theme}.`;
+
   if (theme === "light") {
     document.documentElement.classList.remove("dark");
   } else {
