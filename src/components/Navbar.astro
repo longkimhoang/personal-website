@@ -22,6 +22,7 @@ const { url } = Astro;
             <a
               href={path}
               class="transition-colors duration-200 p-1 hover:text-black dark:hover:text-white"
+              aria-current={url.pathname == path ? "page" : "false"}
               class:list={[
                 url.pathname == path
                   ? "text-black dark:text-white"
