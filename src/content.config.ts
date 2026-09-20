@@ -1,7 +1,8 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 const experienceCollection = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "*.yaml", base: "./src/content/experience" }),
   schema: ({ image }) =>
     z.object({
       sortOrder: z.number(),
