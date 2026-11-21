@@ -12,6 +12,19 @@ npm create astro@latest -- --template basics
 
 ![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
+## CV content
+
+The Experience, Skills, Education and Languages sections are generated from
+`cv.yaml` in [longkimhoang/cv](https://github.com/longkimhoang/cv), the same
+file that renders the PDF CV. Edit content there, not here. See
+`src/cv/loader.ts` and `.env.example`:
+
+- Local: `CV_YAML_PATH=../cv/cv.yaml pnpm dev`
+- Vercel: set `CV_GITHUB_TOKEN` (fine-grained, read-only Contents on
+  longkimhoang/cv), optionally `CV_REF`.
+
+Website-only details (company links and logos) live in `src/cv/companies.ts`.
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:

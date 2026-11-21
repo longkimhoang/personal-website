@@ -1,0 +1,11 @@
+---
+import { inlineMarkdown } from "../cv/format";
+
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<Fragment set:html={inlineMarkdown(text)} />
